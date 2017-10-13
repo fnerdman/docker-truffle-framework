@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+   testrpc:
+     build: ./testrpc
+     ports:
+       - "8545:8545"
+     restart: always
+
+   dev:
+     depends_on:
+       - testrpc
+     build: ./dev
+     user: "node"
+     working_dir: /home/node/app
+     volumes:
+      - ./app:/home/node/app
+     ports:
+      - "3000:3000"
+      - "3001:3001"
+     restart: always

@@ -1,3 +1,5 @@
+This Docker Container is based on the latest node:alpine container and additionaly includes the truffle framework as well as an ethereum testrpc network. Just run the container and open up a shell. Getting started with ethereum smart contract development has never been easier!   
+
 # Quicksetup
 
 Start the container.

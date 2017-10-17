@@ -1,25 +1,17 @@
 # Quicksetup
 
-> NOTE: the user inside the docker container will read and write files as uid 1000, to avoid file permission problems, modifying source files outside the container should be done with uid 1000 as well.
-
-Move your truffle project into the ```apps/``` folder.
-
-Replace the testrpc server domain
+Start the container.
 ```
-sed -i s/localhost/testrpc/g apps/truffle.js
+sudo docker run -d --name truffle -v /path/to/project:/app lead4good/truffle
 ```
 
-Build and start the container.
+Open up a shell in the docker container.
 ```
-sudo docker-compose up --build -d
+sudo docker exec -it --user $UID truffle sh
 ```
+> NOTE: the shell inside the docker container will read and write files as the user which has run the ```docker exec``` command
 
-Open a shell in the docker container
-```
-sudo docker exec -it dockertruffleframework_dev_1 sh
-```
-
-Build and migrate your project
+Build and migrate your project.
 ```
 truffle compile
 truffle migrate

@@ -4,7 +4,7 @@ This Docker Container is based on the latest node:alpine container and additiona
 
 Start the container.
 ```
-sudo docker run -d --name truffle -v /path/to/project:/app lead4good/truffle
+sudo docker run -d --name truffle -p 3000-3001:3000-3001 -p 8545:8545 -v /path/to/project:/app lead4good/truffle
 ```
 
 Open up a shell in the docker container.

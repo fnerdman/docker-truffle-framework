@@ -1,6 +1,6 @@
 FROM node:alpine
 
-RUN yarn global add --global-folder /usr/local/share ethereumjs-testrpc truffle
+RUN yarn global add --global-folder /usr/local/share ethereumjs-testrpc truffle solium
 EXPOSE 3000 3001 8545
 
 VOLUME /app

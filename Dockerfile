@@ -3,7 +3,7 @@ FROM node:alpine
 RUN apk --no-cache add git python make g++ \ 
     && yarn global add \
           --global-folder /usr/local/share \
-          ethereumjs-testrpc@4.1.3 \
+          ethereumjs-testrpc \
           truffle \
           truffle-flattener \
           solium \
